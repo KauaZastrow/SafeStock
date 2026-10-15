@@ -8,6 +8,15 @@ import {
     atualizarEpiController,
     excluirEpiController
 } from "./controller/epiController.js";
+import {
+    cadastrarFuncionarioController,
+    listarFuncionariosController,
+    buscarFuncionarioController,
+    desativarFuncionarioController,
+    ativarFuncionarioController,
+    atualizarFuncionarioController,
+    excluirFuncionarioController
+} from "./controller/funcionarioController.js";
 
 console.log("===== 1. CADASTRO DE EPIs =====");
 
@@ -52,3 +61,61 @@ excluirEpiController(2);
 console.log("\n===== 9. LISTAGEM FINAL =====");
 
 listarEpisController();
+
+console.log("\n===== 10. CADASTRO DE FUNCIONÁRIOS =====");
+
+cadastrarFuncionarioController({
+    matricula: 201,
+    nome: "Ana Souza",
+    setor: "Produção",
+    cargo: "Técnica de segurança"
+});
+cadastrarFuncionarioController({
+    matricula: 202,
+    nome: "Bruno Lima",
+    setor: "Almoxarifado",
+    cargo: "Estoquista"
+});
+cadastrarFuncionarioController({
+    matricula: 203,
+    nome: "Carla Mendes",
+    setor: "Manutenção",
+    cargo: "Supervisora"
+});
+
+console.log("\n===== 11. LISTAGEM DOS FUNCIONÁRIOS =====");
+
+listarFuncionariosController();
+
+console.log("\n===== 12. BUSCA DO FUNCIONÁRIO NO ÍNDICE 1 =====");
+
+buscarFuncionarioController(1);
+
+console.log("\n===== 13. DESATIVAÇÃO DO FUNCIONÁRIO NO ÍNDICE 1 =====");
+
+desativarFuncionarioController(1);
+
+console.log("\n===== 14. STATUS DO FUNCIONÁRIO NO ÍNDICE 1 =====");
+
+buscarFuncionarioController(1);
+
+console.log("\n===== 15. ATIVAÇÃO DO FUNCIONÁRIO NO ÍNDICE 1 =====");
+
+ativarFuncionarioController(1);
+
+console.log("\n===== 16. ATUALIZAÇÃO DO FUNCIONÁRIO NO ÍNDICE 0 =====");
+
+atualizarFuncionarioController(0, {
+    matricula: 201,
+    nome: "Ana Souza Silva",
+    setor: "Segurança do trabalho",
+    cargo: "Técnica de segurança sênior"
+});
+
+console.log("\n===== 17. EXCLUSÃO DO FUNCIONÁRIO NO ÍNDICE 2 =====");
+
+excluirFuncionarioController(2);
+
+console.log("\n===== 18. LISTAGEM FINAL DOS FUNCIONÁRIOS =====");
+
+listarFuncionariosController();

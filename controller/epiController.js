@@ -37,8 +37,8 @@ export function listarEpisController() {
         console.log(`Índice: ${indice}`);
         console.log(`Código: ${epi.codigo}`);
         console.log(`Nome: ${epi.nome}`);
-        console.log(`CA: ${epi.ca}`);
-        console.log(`Quantidade: ${epi.quantidade}`);
+        console.log(`CA: ${epi.CA}`);
+        console.log(`Quantidade: ${epi.quantidadEstoque}`);
     }
 
     console.log("-------------------------");
@@ -53,7 +53,7 @@ export function buscarEpiController(indice) {
     }
 
     console.log(epi);
-    console.log(`Quantidade em estoque: ${epi.quantidade}`);
+    console.log(`Quantidade em estoque: ${epi.quantidadEstoque}`);
 
     return epi;
 }
@@ -124,7 +124,7 @@ export function adicionarQuantidadeController(indice, valor) {
         return false;
     }
 
-    console.log(`Estoque atualizado: ${epi.quantidade}`);
+    console.log(`Estoque atualizado: ${epi.quantidadEstoque}`);
     return true;
 }
 
@@ -150,6 +150,6 @@ export function retirarQuantidadeController(indice, valor) {
         return false;
     }
 
-    console.log(`Estoque atualizado: ${epi.quantidade}`);
+    console.log(`Estoque atualizado: ${epi.quantidadEstoque}`);
     return true;
 }
